@@ -1,0 +1,90 @@
+.dashboard {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.loan-tracking {
+    margin-bottom: 30px;
+}
+
+.loan-tracking table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.loan-tracking th, .loan-tracking td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.loan-tracking th {
+    background-color: #007bff;
+    color: white;
+}
+
+.loan-tracking .approved {
+    color: green;
+    font-weight: bold;
+}
+
+.loan-tracking .pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.loan-tracking a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.loan-tracking a:hover {
+    text-decoration: underline;
+}
+
+.approve-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.approve-btn:hover {
+    background-color: #218838;
+}
+
+.apply-loan form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.apply-loan select, 
+.apply-loan input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.apply-loan button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.apply-loan button:hover {
+    background-color: #0056b3;
+}

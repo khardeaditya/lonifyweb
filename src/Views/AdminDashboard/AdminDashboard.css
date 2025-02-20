@@ -1,0 +1,66 @@
+.admin-dashboard {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.loan-requests {
+    margin-top: 20px;
+}
+
+.loan-requests table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.loan-requests th, .loan-requests td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.loan-requests th {
+    background-color: #007bff;
+    color: white;
+}
+
+.approve {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.decline {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.approve:hover {
+    background-color: #218838;
+}
+
+.decline:hover {
+    background-color: #c82333;
+}
+
+.approved {
+    color: green;
+    font-weight: bold;
+}
+
+.declined {
+    color: red;
+    font-weight: bold;
+}
+
+.pending {
+    color: orange;
+    font-weight: bold;
+}
