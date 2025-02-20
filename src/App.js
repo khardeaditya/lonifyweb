@@ -37,6 +37,7 @@ const App = () => {
 
     return (
         <Router>
+            <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/calculator" element={<LoanCalculator />} />
