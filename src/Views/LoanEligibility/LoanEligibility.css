@@ -1,0 +1,66 @@
+.loan-eligibility {
+    text-align: center;
+    padding: 20px;
+}
+
+.loan-eligibility input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.loan-eligibility button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.loan-eligibility button:hover {
+    background-color: #218838;
+}
+
+.loan-eligibility p {
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.loan-eligibility {
+    text-align: center;
+    padding: 20px;
+}
+
+.loan-eligibility input {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.loan-eligibility button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.loan-eligibility button:hover {
+    background-color: #218838;
+}
+
+.loan-eligibility p {
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: bold;
+}

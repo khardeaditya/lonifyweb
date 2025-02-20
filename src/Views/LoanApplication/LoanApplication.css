@@ -1,0 +1,51 @@
+.loan-application {
+    text-align: center;
+    padding: 20px;
+}
+
+.loan-application form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.loan-application input,
+.loan-application select,
+.loan-application button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.loan-application button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.loan-application button:hover {
+    background-color: #0056b3;
+}
+
+/* Form Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Form */
+@media (max-width: 600px) {
+    .loan-application form {
+        width: 90%;
+    }
+}

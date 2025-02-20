@@ -1,0 +1,39 @@
+.footer {
+    background: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer ul li {
+    margin: 0 15px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer ul li a:hover {
+    color: #ffd700;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .footer ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
