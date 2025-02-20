@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.0",
     "react": "^19.0.0",

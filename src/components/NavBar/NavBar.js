@@ -11,10 +11,9 @@ const Navbar = () => {
                 {/* <li><Link to="/apply">Apply</Link></li> */}
                 {/* <li><Link to="/calculator">Loan Calculator</Link></li> */}
                 <li><Link to="/types">Loan Types</Link></li>
-                <li><Link to="/emi-payment">EMI Payment</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
                 {/* <li><Link to="/loan-comparison">Loan Comparison</Link></li> */}
-                <li><Link to="/dashboard">Dashboard</Link></li>
+                {/* <li><Link to="/dashboard">Dashboard</Link></li> */}
                 <li><Link to="/login">UserLogin</Link></li>
                 {/* <li><Link to="/register">Register</Link></li> */}
                 <li><Link to="/user-dashboard">UserDash</Link></li>

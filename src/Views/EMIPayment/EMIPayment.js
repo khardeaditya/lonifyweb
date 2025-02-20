@@ -1,35 +1,98 @@
 import React, { useState } from "react";
 import "./EMIPayment.css";
+import emailjs from "@emailjs/browser";
 
 const EMIPayment = () => {
-    const [paymentHistory, setPaymentHistory] = useState([
-        { id: 1, amount: 5000, date: "2024-02-10", status: "Paid" },
-        { id: 2, amount: 5000, date: "2024-01-10", status: "Paid" },
-    ]);
+    const [amount, setAmount] = useState("");
 
-    const handlePayment = () => {
-        const newPayment = {
-            id: paymentHistory.length + 1,
-            amount: 5000,
-            date: new Date().toISOString().split("T")[0],
-            status: "Paid",
+
+    const handlePayment = async () => {
+        if (!amount) {
+            alert("Please enter a valid amount.");
+            return;
+        }
+    
+        const options = {
+            key: "rzp_test_JZKXPjI1z7mX37",
+            amount: amount * 100, // Convert to paise
+            currency: "INR",
+            name: "Loan EMI Payment",
+            description: "Monthly EMI Payment",
+            image: "https://yourwebsite.com/logo.png",
+            handler: function (response) {
+                alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
+    
+                const userEmail = localStorage.getItem("userEmail");
+    
+                const paymentData = {
+                    userEmail: userEmail,
+                    amount: amount,
+                    transactionId: response.razorpay_payment_id,
+                    date: new Date().toLocaleString(),
+                    status: "Success",
+                };
+    
+                const existingPayments = JSON.parse(localStorage.getItem("emiPayments")) || [];
+                existingPayments.push(paymentData);
+                localStorage.setItem("emiPayments", JSON.stringify(existingPayments));
+    
+                // ✅ Send Confirmation Email
+                sendPaymentEmail(userEmail, amount, response.razorpay_payment_id);
+            },
+            prefill: {
+                name: "User Name",
+                email: localStorage.getItem("userEmail") || "user@example.com",
+                contact: "9999999999",
+            },
+            theme: {
+                color: "#3399cc",
+            },
         };
-        setPaymentHistory([...paymentHistory, newPayment]);
-        alert("Payment Successful!");
+    
+        const rzp1 = new window.Razorpay(options);
+        rzp1.open();
     };
+    
+    // Function to send email
+    const sendPaymentEmail = (userEmail, amount, transactionId) => {
+        const templateParams = {
+            userEmail: userEmail,
+            amount: amount,
+            transactionId: transactionId,
+        };
+    
+        emailjs
+            .send("service_p5q9ifz",
+                 "template_iwakwfo",    //Payment Succes ID
+                  templateParams, 
+                  "psaVh85Z_4nlGBGJi")
+            .then(
+                (response) => {
+                    console.log("Email sent successfully!", response.status, response.text);
+                    alert("Payment confirmation email sent!");
+                },
+                (error) => {
+                    console.error("Email failed to send:", error);
+                    alert("Failed to send payment confirmation email.");
+                }
+            );
+    };
+    
+    
 
     return (
         <div className="emi-payment">
-            <h2>EMI Payment</h2>
-            <button onClick={handlePayment} className="pay-btn">Pay Now</button>
-            <h3>Payment History</h3>
-            <ul>
-                {paymentHistory.map((payment) => (
-                    <li key={payment.id}>
-                        {payment.date} - ₹{payment.amount} ({payment.status})
-                    </li>
-                ))}
-            </ul>
+            <h2>Loan EMI Payment</h2>
+            <div className="form-group">
+                <label>Enter EMI Amount:</label>
+                <input
+                    type="number"
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                    placeholder="Enter amount"
+                />
+            </div>
+            <button onClick={handlePayment}>Pay Now</button>
         </div>
     );
 };

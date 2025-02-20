@@ -43,7 +43,7 @@ const LoanApplication = () => {
         localStorage.setItem("loanRequests", JSON.stringify(loanRequests));
 
         alert("Loan application submitted successfully!");
-        navigate("/user-dashboard");
+        navigate("/dashboard");
     };
 
     return (

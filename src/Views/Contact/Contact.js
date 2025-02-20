@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
-
+import Navbar from "../../components/NavBar/NavBar";
 const ContactSupport = () => {
     const [message, setMessage] = useState("");
 
@@ -11,7 +11,9 @@ const ContactSupport = () => {
     };
 
     return (
-        <div className="contact-support">
+        <>
+        <Navbar />
+                <div className="contact-support">
             <h2>Contact Support</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Your Name" required />
@@ -20,6 +22,8 @@ const ContactSupport = () => {
                 <button type="submit">Send</button>
             </form>
         </div>
+        </>
+
     );
 };
 

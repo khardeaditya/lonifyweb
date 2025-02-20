@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./../../AdminDashboard/AdminLogin/AdminLogin";
 import "./AdminLogin.css";
 
 const AdminLogin = ({ setIsAdminAuthenticated }) => {
@@ -25,6 +26,8 @@ const AdminLogin = ({ setIsAdminAuthenticated }) => {
     };
 
     return (
+        <>
+                <Navbar />
         <div className="admin-login">
             <h2>Admin Login</h2>
             {error && <p className="error">{error}</p>}
@@ -46,6 +49,8 @@ const AdminLogin = ({ setIsAdminAuthenticated }) => {
                 <button type="submit">Login</button>
             </form>
         </div>
+        </>
+
     );
 };
 
